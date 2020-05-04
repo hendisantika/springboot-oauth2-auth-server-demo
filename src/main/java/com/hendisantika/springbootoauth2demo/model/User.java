@@ -7,14 +7,15 @@ import lombok.NoArgsConstructor;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.ForeignKey;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -23,26 +24,40 @@ import javax.persistence.UniqueConstraint;
  * Email: hendisantika@gmail.com
  * Telegram : @hendisantika34
  * Date: 05/05/20
- * Time: 06.47
+ * Time: 06.49
  */
 @Entity
-@Table(name = "user_authority", uniqueConstraints = @UniqueConstraint(columnNames = {"user_id", "authority_id"},
-        name = "USER_AUTHORITY_UNIQUE_USER_ID_AND_AUTHORITY_ID"))
+@Table(name = "user", uniqueConstraints = @UniqueConstraint(columnNames = {"userName"}, name = "USER_UNIQUE_USERNAME"))
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserAuthority {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID", columnDefinition = "bigint unsigned")
     private Integer id;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "USER_ID", foreignKey = @ForeignKey(name = "FK_USER_AUTHORITY_USER_ID"))
-    private User user;
+    @Column(length = 50)
+    private String userName;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "AUTHORITY_ID", foreignKey = @ForeignKey(name = "FK_USER_AUTHORITY_AUTHORITY_ID"))
-    private Authority authority;
+    @Column
+    private String password;
+
+    @Column
+    private Boolean accountExpired;
+
+    @Column
+    private Boolean accountLocked;
+
+    @Column
+    private Boolean credentialsExpired;
+
+    @Column
+    private Boolean enabled;
+
+    @OneToMany(mappedBy = "user", targetEntity = UserAuthority.class, cascade = {
+            CascadeType.ALL}, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<UserAuthority> userAuthorities = new HashSet<UserAuthority>();
+
 }
