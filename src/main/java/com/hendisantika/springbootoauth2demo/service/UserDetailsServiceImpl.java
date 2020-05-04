@@ -39,7 +39,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
             CustomUserDetails customUserDetails = new CustomUserDetails();
             customUserDetails.setUserName(user.getUserName());
             customUserDetails.setPassword(user.getPassword());
-            Set<GrantedAuthority> authorities = new HashSet<GrantedAuthority>();
+            Set<GrantedAuthority> authorities = new HashSet<>();
             for (UserAuthority authority : user.getUserAuthorities()) {
                 authorities.add(new CustomGrantedAuthority(authority.getAuthority().getName()));
             }
