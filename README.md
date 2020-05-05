@@ -1,5 +1,7 @@
 # springboot-oauth2-demo
 
+Spring Oauth2 Authorization server + JWT + JPA data model
+
 Implements Spring OAuth2 with JWT token store
 
 The required spring oauth data structure is created as JPA entities.
