@@ -21,3 +21,10 @@ User credentials : **admin/admin1234**
 curl --location --request POST 'http://localhost:8080/oauth/token?grant_type=client_credentials' \
 --header 'Authorization: Basic b2F1dGgyLWp3dC1jbGllbnQ6YWRtaW4xMjM0'
 ```
+
+### Screen shot
+
+OAuth Token Request
+
+![OAuth Token Request](img/oauth.png "OAuth Token Request")
+
