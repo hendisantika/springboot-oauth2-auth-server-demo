@@ -3,6 +3,7 @@ package com.hendisantika.springbootoauth2demo.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -76,7 +77,8 @@ public class OauthClientDetails {
     @Column
     private Date created;
 
-    @Column(columnDefinition = "boolean default true")
+    @Column(columnDefinition = "TINYINT")
+    @Type(type = "org.hibernate.type.NumericBooleanType")
     private Boolean enabled;
 
     @Transient

@@ -3,6 +3,7 @@ package com.hendisantika.springbootoauth2demo.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -53,7 +54,8 @@ public class User {
     @Column
     private Boolean credentialsExpired;
 
-    @Column
+    @Column(columnDefinition = "TINYINT")
+    @Type(type = "org.hibernate.type.NumericBooleanType")
     private Boolean enabled;
 
     @OneToMany(mappedBy = "user", targetEntity = UserAuthority.class, cascade = {
