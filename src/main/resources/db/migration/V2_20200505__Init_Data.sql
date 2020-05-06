@@ -9,7 +9,7 @@ VALUES ('oauth2-jwt-client', 'resource-server-rest-api', '$2a$08$qvrzQZ7jJ7oy2p/
 INSERT INTO authority (NAME)
 VALUES ('ADMIN');
 
-INSERT INTO USER (account_expired, account_locked, credentials_expired, ENABLED, PASSWORD,
+INSERT INTO user (account_expired, account_locked, credentials_expired, ENABLED, PASSWORD,
                   user_name)
 VALUES (0, 0, 0, 1, '$2a$08$qvrzQZ7jJ7oy2p/msL4M0.l83Cd0jNsX6AJUitbgRXGzge4j035ha', 'admin');
 

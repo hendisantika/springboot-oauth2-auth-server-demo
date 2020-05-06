@@ -60,6 +60,6 @@ public class User {
 
     @OneToMany(mappedBy = "user", targetEntity = UserAuthority.class, cascade = {
             CascadeType.ALL}, orphanRemoval = true, fetch = FetchType.EAGER)
-    private Set<UserAuthority> userAuthorities = new HashSet<UserAuthority>();
+    private Set<UserAuthority> userAuthorities = new HashSet<>();
 
 }
