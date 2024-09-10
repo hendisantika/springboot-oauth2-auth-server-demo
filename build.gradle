@@ -32,7 +32,7 @@ dependencies {
     compile('org.springframework.security:spring-security-jwt:1.0.9.RELEASE')
     compile group: 'org.flywaydb', name: 'flyway-core', version: '6.4.1'
 
-    compile('com.sun.xml.bind:jaxb-impl:2.1.2')
+    compile('com.sun.xml.bind:jaxb-impl:4.0.5')
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
