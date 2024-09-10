@@ -29,7 +29,7 @@ dependencies {
     implementation('org.springframework.cloud:spring-cloud-starter-oauth2')
     implementation('org.springframework.boot:spring-boot-starter-security')
     compile('mysql:mysql-connector-java:8.0.11')
-    compile('org.springframework.security:spring-security-jwt:1.0.9.RELEASE')
+    compile('org.springframework.security:spring-security-jwt:1.1.1.RELEASE')
     compile group: 'org.flywaydb', name: 'flyway-core', version: '6.4.1'
 
     compile('com.sun.xml.bind:jaxb-impl:4.0.5')
