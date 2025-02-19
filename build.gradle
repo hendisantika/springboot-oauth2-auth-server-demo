@@ -30,7 +30,7 @@ dependencies {
     implementation('org.springframework.boot:spring-boot-starter-security')
     compile('mysql:mysql-connector-java:8.0.33')
     compile('org.springframework.security:spring-security-jwt:1.1.1.RELEASE')
-    compile group: 'org.flywaydb', name: 'flyway-core', version: '11.3.2'
+    compile group: 'org.flywaydb', name: 'flyway-core', version: '11.3.3'
 
     compile('com.sun.xml.bind:jaxb-impl:4.0.5')
     compileOnly 'org.projectlombok:lombok'
